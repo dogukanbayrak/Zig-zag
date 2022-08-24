@@ -7,6 +7,8 @@ public class GroundController : MonoBehaviour
 
     [SerializeField] private int deneme;
 
+    public GameManager gameManager;
+
     private Rigidbody rb;
     [SerializeField] private bool gravityCheck;
 
@@ -32,8 +34,8 @@ public class GroundController : MonoBehaviour
         if (other.gameObject.CompareTag("Ball"))
         {
             gravityCheck = true;
-            GameManager.groundCounter++;
-            Debug.Log(GameManager.groundCounter);
+            
+            
         }
 
     }

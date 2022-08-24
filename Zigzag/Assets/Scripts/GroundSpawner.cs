@@ -6,6 +6,7 @@ public class GroundSpawner : MonoBehaviour
 {
 
     public GameObject lastGroundObject;
+    
 
     [SerializeField] private GameObject groundPrefab;
     [SerializeField] private GameObject fasterGroundPrefab;
@@ -18,6 +19,8 @@ public class GroundSpawner : MonoBehaviour
 
     private int groundDirection;
     private int groundSpeedSet;
+
+    public GameManager gameManager;
 
 
     void Start()
@@ -32,9 +35,9 @@ public class GroundSpawner : MonoBehaviour
     
     void Update()
     {
-        if (GameManager.groundCounter >= 75)
+        if (gameManager.groundCounter >= 75)
         {
-            GameManager.groundCounter = 0;
+            gameManager.groundCounter = 0;
             GenerateRandomNewGrounds();
 
         }
@@ -49,7 +52,7 @@ public class GroundSpawner : MonoBehaviour
 
         if (groundDirection == 0)
         {
-            if(groundSpeedSet == 15)
+            if(groundSpeedSet > 17)
             {
                 fasterGroundObject = Instantiate(fasterGroundPrefab, new Vector3(lastGroundObject.transform.position.x - 1f,
                                                                     lastGroundObject.transform.position.y,
