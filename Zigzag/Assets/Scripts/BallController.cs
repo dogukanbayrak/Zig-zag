@@ -39,13 +39,13 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Faster"))
         {
-            moveSpeed += .2f;
-            pointMultiplier += .2f;
+            moveSpeed += .1f;
+            pointMultiplier += .1f;
         }
         else if(collision.gameObject.CompareTag("Slower"))
         {
-            moveSpeed -= .2f;
-            pointMultiplier -= .2f;
+            moveSpeed -= .1f;
+            pointMultiplier -= .1f;
         }
     }
 
@@ -63,10 +63,26 @@ public class BallController : MonoBehaviour
 
     private void InputCheck()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    turnCheck = !turnCheck;
+        //}
+
+        if(Input.touchCount>0)
         {
-            turnCheck = !turnCheck;
+            Touch finger = Input.GetTouch(0);
+
+
+            if(finger.phase== TouchPhase.Began)
+            {
+                turnCheck = !turnCheck;
+            }
+
+
         }
+
+
+
     }
     private void SetBallRotation()
     {

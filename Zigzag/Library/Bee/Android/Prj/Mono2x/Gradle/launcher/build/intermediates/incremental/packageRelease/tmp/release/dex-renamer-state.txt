@@ -1,0 +1,4 @@
+#Sat Aug 27 20:10:17 EET 2022
+base.0=C\:\\Users\\draw6\\Zigzag\\2\\Zig-zag\\Zigzag\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
